@@ -1,0 +1,93 @@
+//PIRAMIDE
+            Dictionary<string, Vector> vertices = new Dictionary<string, Vector>();
+            vertices.Add(" 1 ", new Vector(-50f, 0f, 0f));
+            vertices.Add(" 2 ", new Vector(0f, 100f, 0f));
+            vertices.Add(" 3 ", new Vector(0f, 0f, -50f));
+
+            Dictionary<string, Vector> vertices2 = new Dictionary<string, Vector>();
+            vertices2.Add(" 4 ", new Vector(50f, 0f, 0f));
+            vertices2.Add(" 5 ", new Vector(0f, 100f, 0f));
+            vertices2.Add(" 6 ", new Vector(0f, 0f, 50f));
+
+            Dictionary<string, Vector> vertices3 = new Dictionary<string, Vector>();
+            vertices3.Add(" 7 ", new Vector(-50f, 0f, 0f));
+            vertices3.Add(" 8 ", new Vector(0f, 100f, 0f));
+            vertices3.Add(" 0 ", new Vector(0f, 0f, 50f));
+
+            Dictionary<string, Vector> vertices4 = new Dictionary<string, Vector>();
+            vertices4.Add(" 10 ", new Vector(0f, 0f, -50f));
+            vertices4.Add(" 11 ", new Vector(50f, 0f, 0f));
+            vertices4.Add(" 12 ", new Vector(0f, 100f, 0f));
+
+
+
+            Dictionary<string, Cara> cara = new Dictionary<string, Cara>();
+            cara.Add(" Violet ", new Cara(vertices, Color.Violet, new Vector(0f, 0f, 0f)));
+            cara.Add(" Red ", new Cara(vertices2, Color.Red, new Vector(0f, 0f, 0f)));
+            cara.Add(" LightBlue ", new Cara(vertices3, Color.LightBlue, new Vector(0f, 0f, 0f)));
+            cara.Add(" LightYellow ", new Cara(vertices4, Color.LightYellow, new Vector(0f, 0f, 0f)));
+
+            Dictionary<string, Cara> cara2 = new Dictionary<string, Cara>();
+            cara2.Add(" Black ", new Cara(vertices, Color.Black, new Vector(0f, 0f, 0f)));
+            cara2.Add(" FloraWhite ", new Cara(vertices2, Color.FloralWhite, new Vector(0f, 0f, 0f)));
+            cara2.Add(" LightSeaGreen ", new Cara(vertices3, Color.LightSeaGreen, new Vector(0f, 0f, 0f)));
+            cara2.Add(" Blue ", new Cara(vertices4, Color.Blue, new Vector(0f, 0f, 0f)));
+
+
+            //CUBO
+            Dictionary<string, Vector> vertices5 = new Dictionary<string, Vector>();
+            vertices5.Add(" 1 ", new Vector(-50f, 50f, -50f));
+            vertices5.Add(" 2 ", new Vector(50f, 50f, -50f));
+            vertices5.Add(" 3 ", new Vector(50f, -50f, -50f));
+            vertices5.Add(" 4 ", new Vector(-50f, -50f, -50f));
+
+            Dictionary<string, Vector> vertices6 = new Dictionary<string, Vector>();
+            vertices6.Add(" 5 ", new Vector(-50f, 50f, 50f));
+            vertices6.Add(" 6 ", new Vector(-50f, 50f, -50f));
+            vertices6.Add(" 7 ", new Vector(-50f, -50f, -50f));
+            vertices6.Add(" 8 ", new Vector(-50f, -50f, 50f));
+
+            Dictionary<string, Vector> vertices7 = new Dictionary<string, Vector>();
+            vertices7.Add(" 9 ", new Vector(50f, 50f, 50f));
+            vertices7.Add(" 10 ", new Vector(50f, 50f, -50f));
+            vertices7.Add(" 11 ", new Vector(50f, -50f, -50f));
+            vertices7.Add(" 12 ", new Vector(50f, -50f, 50f));
+
+            Dictionary<string, Vector> vertices8 = new Dictionary<string, Vector>();
+            vertices8.Add(" 13 ", new Vector(-50f, 50f, 50f));
+            vertices8.Add(" 14 ", new Vector(50f, 50f, 50f));
+            vertices8.Add(" 15 ", new Vector(50f, -50f, 50f));
+            vertices8.Add(" 16 ", new Vector(-50f, -50f, 50f));
+
+            Dictionary<string, Vector> vertices9 = new Dictionary<string, Vector>();
+            vertices9.Add(" 17 ", new Vector(-50f, 50f, 50f));
+            vertices9.Add(" 18 ", new Vector(50f, 50f, 50f));
+            vertices9.Add(" 19 ", new Vector(50f, 50f, -50f));
+            vertices9.Add(" 20 ", new Vector(-50f, 50f, -50f));
+
+            Dictionary<string, Vector> vertices10 = new Dictionary<string, Vector>();
+            vertices10.Add(" 21 ", new Vector(-50f, -50f, 50f));
+            vertices10.Add(" 22 ", new Vector(50f, -50f, 50f));
+            vertices10.Add(" 23 ", new Vector(50f, -50f, -50f));
+            vertices10.Add(" 24 ", new Vector(-50f, -50f, -50f));
+
+            Dictionary<string, Cara> cara3 = new Dictionary<string, Cara>();
+            cara3.Add(" Violet ", new Cara(vertices5, Color.Violet, new Vector(0f, 0f, 0f)));
+            cara3.Add(" LightSkyBlue ", new Cara(vertices6, Color.LightSkyBlue, new Vector(0f, 0f, 0f)));
+            cara3.Add(" Red ", new Cara(vertices7, Color.Red, new Vector(0f, 0f, 0f)));
+            cara3.Add(" Pink ", new Cara(vertices8, Color.Pink, new Vector(0f, 0f, 0f)));
+            cara3.Add(" White ", new Cara(vertices9, Color.White, new Vector(0f, 0f, 0f)));
+            cara3.Add(" Azure ", new Cara(vertices10, Color.Azure, new Vector(0f, 0f, 0f)));
+
+
+            Objeto objeto1 = new Objeto(cara, new Vector(-100f, -100f, -100f));
+            CargadorJson.Guardar("../../Objetos/piramide.json", objeto1);
+
+            Objeto piramide = CargadorJson.Cargar("../../Objetos/piramide.json");
+            objeto.Add(" PIRAMIDE ", piramide);
+
+            Objeto objeto2 = new Objeto(cara3, new Vector(0f, 0f, 0f));
+            CargadorJson.Guardar("../../Objetos/cubo.json", objeto2);
+
+            Objeto cubo = CargadorJson.Cargar("../../Objetos/cubo.json");
+            objeto.Add(" CUBO ", cubo);
